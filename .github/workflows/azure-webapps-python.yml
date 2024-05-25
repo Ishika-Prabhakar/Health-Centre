@@ -20,7 +20,7 @@
 name: Build and deploy Python app to Azure Web App
 
 env:
-  AZURE_WEBAPP_NAME: health-ai  # set this to the name of your Azure Web App
+  AZURE_WEBAPP_NAME: health-ai-aec  # set this to the name of your Azure Web App
   PYTHON_VERSION: '3.10.11'              # set this to the Python version to use
 
 on:
@@ -78,9 +78,16 @@ jobs:
           name: python-app
           path: .
 
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_10B1AD04723043AD887445BC5216E21C }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_61A88A04B41D4B50A3D2CCC3D994E704 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1C66D889C80C4D12A8FD7A0ED25A2E19 }}
+
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          slot-name: 'Production'
