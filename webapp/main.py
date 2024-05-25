@@ -10,12 +10,12 @@ app = Flask(__name__, template_folder='template')
 
 
 # load databasedataset===================================
-sym_des = pd.read_csv("../dataset/symtoms_df.csv")
-precautions = pd.read_csv("../dataset/precautions_df.csv")
-workout = pd.read_csv("../dataset/workout_df.csv")
-description = pd.read_csv("../dataset/description.csv")
-medications = pd.read_csv('../dataset/medications.csv')
-diets = pd.read_csv("../dataset/diets.csv")
+sym_des = pd.read_csv("../data/symtoms_df.csv")
+precautions = pd.read_csv("../data/precautions_df.csv")
+workout = pd.read_csv("../data/workout_df.csv")
+description = pd.read_csv("../data/description.csv")
+medications = pd.read_csv('../data/medications.csv')
+diets = pd.read_csv("../data/diets.csv")
 
 
 # load model===========================================
@@ -105,12 +105,12 @@ app = Flask(__name__, template_folder='template')
 
 
 # load databasedataset===================================
-sym_des = pd.read_csv("../dataset/symtoms_df.csv")
-precautions = pd.read_csv("../dataset/precautions_df.csv")
-workout = pd.read_csv("../dataset/workout_df.csv")
-description = pd.read_csv("../dataset/description.csv")
-medications = pd.read_csv('../dataset/medications.csv')
-diets = pd.read_csv("../dataset/diets.csv") 
+sym_des = pd.read_csv("../data/symtoms_df.csv")
+precautions = pd.read_csv("../data/precautions_df.csv")
+workout = pd.read_csv("../data/workout_df.csv")
+description = pd.read_csv("../data/description.csv")
+medications = pd.read_csv('../data/medications.csv')
+diets = pd.read_csv("../data/diets.csv") 
 
 
 # load model===========================================
